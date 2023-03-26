@@ -68,3 +68,61 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+--------------
+# login page
+In this there  is use usestate to validate form
+
+
+### Declare React States for email and password
+```
+const [email, setemail] = useState("");
+const [password, setpassword] = useState("");
+```
+### function to handle form submit
+```
+const submitForm = (e) => {
+        e.preventDefault();
+
+        const newEntry ={email, password};
+
+        setAllEntry ([AllEntry, newEntry]);
+        console.log( AllEntry);
+```
+### javascript code for login page 
+```
+<div className="container">
+     <form action="">
+        <div>
+            <label htmlFor="email">Email</label><br />
+            <input type="text" value={email} id = "email" onChange={(e) => setemail (e.target.value)} />
+        </div>
+        <div>
+            <label htmlFor="password">Password</label><br />
+            <input type="text" value={password} id = "password" onChange={(e) => setpassword (e.target.value)} />
+        </div>
+        <button onClick={submitForm}>Submit</button>
+        <button id="btn1" >clear</button>
+      </form>
+     </div>
+    ```
+### submitted data are stored in this
+    ```
+     <div>
+        {
+            AllEntry.map((curElem) => {
+                return(
+                    <div className='showDataStyle'>
+                        <p>{curElem.email}</p>
+                        <p>{curElem.password}</p>
+
+                    </div>
+
+                )
+            })
+        }
+      </div>
+```
+## CSS file  written in
+**login.css**
+    
+    
