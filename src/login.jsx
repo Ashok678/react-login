@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import './login.css'
+import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
+    const navigate = useNavigate();
     const [email, setemail] = useState("");
      const [password, setpassword] = useState("");
 
-     const [AllEntry, setAllEntry] = useState([]);
-     const submitForm = (e) => {
-        e.preventDefault();
+     const [Entry, setEntry] = useState([]);
+    
+     const navigateWeather = ()=>{
+        navigate("/Tempapp");
+     }
+     const submitForm = (input) => {
+        input.preventDefault();
 
         const newEntry ={email, password};
 
-        setAllEntry ([AllEntry, newEntry]);
-        console.log( AllEntry);
+        setEntry ([...Entry, newEntry]);
+
 
         setemail("");
         setpassword("");
@@ -34,11 +40,13 @@ export const Login = () => {
         </div>
         <button onClick={submitForm}>Submit</button>
         <button id="btn1" >clear</button>
+        <button onClick={navigateWeather}>login</button>
       </form>
+      
      </div>
       <div>
         {
-            AllEntry.map((curElem) => {
+            Entry.map((curElem) => {
                 return(
                     <div className='showDataStyle'>
                         <p>{curElem.email}</p>

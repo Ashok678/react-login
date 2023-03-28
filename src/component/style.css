@@ -1,0 +1,19 @@
+.box{
+    text-align: center;
+    justify-content: center;
+    margin: 30px;
+    border: 1px solid black;
+    background: aliceblue;
+
+}
+.inputData{
+    margin: 20px;
+}
+input{
+    padding: 10px 42px;
+    border-radius: 10px;
+}
+.location i{
+    font-size: 36px;
+    margin: 0px 24px;
+}
